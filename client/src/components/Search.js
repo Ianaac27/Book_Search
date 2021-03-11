@@ -2,7 +2,7 @@ import React from "react";
 
 function Search () {
     return (
-        <div className="bg-info p-4">
+        <div className="bg-info rounded p-4">
             <h2 className="fs-2">Book Search</h2>
             <div >
                 <form className="form-inline">
