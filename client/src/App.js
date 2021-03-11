@@ -4,6 +4,7 @@ import "bootstrap/scss/bootstrap.scss";
 import GlobalNavbar from "./components/GlobalNavbar";
 import Header from "./components/Jumbotron";
 import Home from "./components/Home";
+import SavedBooks from "./components/SavedBooks";
 
 
 function App() {
@@ -14,7 +15,9 @@ function App() {
         </div>
         <div className="container">
           <Header />
+          {/* Establish Router */}
           <Home />
+          {/* <SavedBooks /> */}
         </div>
       </div>
     );
