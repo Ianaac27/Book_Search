@@ -1,6 +1,7 @@
 import React from "react";
 
 import "bootstrap/scss/bootstrap.scss";
+import GlobalNavbar from "./components/GlobalNavbar";
 
 // import "bootstrap/scss/_variables.scss";
 // import "bootstrap/scss/_mixins.scss";
@@ -11,14 +12,16 @@ import "bootstrap/scss/bootstrap.scss";
 
 function App() {
     return (
-      <div className="container">
+      <div>
         <div className="row">
-            <h2>Welcome to React</h2>
-        </div>
-        <div className="row">
-            <p className="App-intro">
-              To get started, edit <code>src/App.js</code> and save to reload.
-            </p>
+            <GlobalNavbar />
+          </div>
+        <div className="container">
+          <div className="row">
+              <p className="App-intro">
+                To get started, edit <code>src/App.js</code> and save to reload.
+              </p>
+          </div>
         </div>
       </div>
     );
