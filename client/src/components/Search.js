@@ -1,18 +1,37 @@
-import React from "react";
+import React, {useRef} from "react";
+import { Card, Form, Button } from "react-bootstrap";
+import API from "../utils/api";
 
 function Search () {
+
+    const bookInput = useRef();
+
+    const handleSubmit = event => {
+        event.preventDefault();
+
+        API.getBooks( bookInput.current.value )
+            .then(({data}) => {
+                console.log(data);
+            });
+    }
+
     return (
-        <div className="bg-info rounded p-4">
-            <h2 className="fs-2">Book Search</h2>
-            <div >
-                <form className="form-inline">
-                    {/* <label className="filter-label mr-3" htmlFor="bookSearch">Search for Books:</label> */}
-                    <input name="search" className="form-control mr-sm-2" type="search" placeholder="Search Books" 
-                    aria-label="Search" id="bookSearch"/>
-                    <button type="submit" className="btn btn-primary">Search</button>
-                </form>
-            </div>
-        </div>
+
+        <Card>
+            <Card.Body>
+                <h2 className="fs-2" >Book Search</h2>
+                <Form onSubmit={handleSubmit}> 
+                    <Form.Group>
+                        <Form.Label>Book Name</Form.Label>
+                            <Form.Control ref={bookInput} type="text" placeholder="Search Book" />
+                    </Form.Group>
+                    <Button variant="primary" type="submit">
+                        Search
+                    </Button>
+                </Form>
+            </Card.Body>
+        </Card>
+        
 )
 }
 
