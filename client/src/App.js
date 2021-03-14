@@ -1,5 +1,5 @@
 import React from "react";
-
+// import {Router, Switch, Route} from "react-router-dom";
 import "bootstrap/scss/bootstrap.scss";
 import GlobalNavbar from "./components/GlobalNavbar";
 import Header from "./components/Jumbotron";
@@ -10,17 +10,21 @@ import SavedBooks from "./components/SavedBooks";
 function App() {
 
     return (
-      <div>
-        <div className="row">
-          <GlobalNavbar />
+      // <Router>
+        <div>
+          <div className="row">
+            <GlobalNavbar />
+          </div>
+          <div className="container">
+            <Header />
+            <Home />
+            {/* <Switch>
+                <Route path="/home" component={Home} />
+                <Route path="/savedbooks" component={SavedBooks} />
+            </Switch> */}
+          </div>
         </div>
-        <div className="container">
-          <Header />
-          {/* Establish Router */}
-          <Home />
-          {/* <SavedBooks /> */}
-        </div>
-      </div>
+      // </Router>
     );
 }
 

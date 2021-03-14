@@ -1,16 +1,26 @@
 import React from "react";
-import NoResults from "./NoResults";
-import Results from "./Results";
 
-function BookResults () {
+function BookResults ({result}) {
     return (
         <div className="bg-dark rounded p-4 mt-4">
             <h2 className="fs-2 text-white">Results</h2>
             <div >
-                 {/* Establish router or conditional */}
-                <NoResults />
-                {/* dynamic result compnents, router or conditional, refer to employee directly for user cards */}
-                {/* <Results /> */}
+            {result.map(result => (
+                <div className="d-flex justify-content-center align-item-center p-4">
+                    <div className="card d-flex flex-row">
+                        <img src={result.volumeInfo.imageLinks.thumbnail} alt="book-image"/>
+                        <div className="card-body ml-3 d-flex flex-column justify-content-center">
+                            <div className="d-flex flex-row">
+                                <button type="button" className="btn btn-primary" href={result.selfLink}>View</button>
+                                <button type="button" className="btn btn-primary">Save</button>
+                            </div>
+                            <h3 className="name card-title">{result.volumeInfo.title}</h3>
+                            <p id="bookDescription" className="info">{result.volumeInfo.description}</p>
+                        </div>
+                    </div>
+                </div>
+       )
+       )}; 
             </div>
         </div>
 )

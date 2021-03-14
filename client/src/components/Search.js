@@ -5,7 +5,7 @@ import API from "../utils/API";
 
 function Search () {
 
-    // const [books, setBooks] = useState("");
+    const [books, setBooks] = useState("");
     const [result, setResult] = useState([]);
     const [apiKey, setApiKey] = useState("AIzaSyBxQCKW6sj6XpOO98O3jUevXEKeJ5VyDFY");
 
@@ -16,13 +16,10 @@ function Search () {
 
         axios.get("https://www.googleapis.com/books/v1/volumes?q="+bookInput.current.value+"&key="+apiKey+"&maxResults=10")
             .then(({data}) => {
-                console.log(data);
-            });
+                console.log(data.items);
 
-            // API.getBooks("https://www.googleapis.com/books/v1/volumes?q="+bookInput.current.value+"&key="+apiKey+"maxResults=10")
-            // .then(({data}) => {
-            //     console.log(data);
-            // });
+                setResult(data.items);
+            });
     }
 
     return (
