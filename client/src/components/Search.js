@@ -1,18 +1,28 @@
-import React, {useRef} from "react";
+import axios from "axios";
+import React, {useRef, useState} from "react";
 import { Card, Form, Button } from "react-bootstrap";
-import API from "../utils/api";
+import API from "../utils/API";
 
 function Search () {
+
+    // const [books, setBooks] = useState("");
+    const [result, setResult] = useState([]);
+    const [apiKey, setApiKey] = useState("AIzaSyBxQCKW6sj6XpOO98O3jUevXEKeJ5VyDFY");
 
     const bookInput = useRef();
 
     const handleSubmit = event => {
         event.preventDefault();
 
-        API.getBooks( bookInput.current.value )
+        axios.get("https://www.googleapis.com/books/v1/volumes?q="+bookInput.current.value+"&key="+apiKey+"&maxResults=10")
             .then(({data}) => {
                 console.log(data);
             });
+
+            // API.getBooks("https://www.googleapis.com/books/v1/volumes?q="+bookInput.current.value+"&key="+apiKey+"maxResults=10")
+            // .then(({data}) => {
+            //     console.log(data);
+            // });
     }
 
     return (
