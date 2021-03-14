@@ -8,10 +8,10 @@ function BookResults ({result}) {
             {result.map(result => (
                 <div className="d-flex justify-content-center align-item-center p-4">
                     <div className="card d-flex flex-row">
-                        <img src={result.volumeInfo.imageLinks.thumbnail} alt="book-image"/>
+                        <img src={result.volumeInfo.imageLinks&&result.volumeInfo.imageLinks.thumbnail} alt={result.volumeInfo.title}/>
                         <div className="card-body ml-3 d-flex flex-column justify-content-center">
                             <div className="d-flex flex-row">
-                                <button type="button" className="btn btn-primary" href={result.selfLink}>View</button>
+                                <a type="button" className="btn btn-primary" target="_blank" href={result.volumeInfo.previewLink}>View</a>
                                 <button type="button" className="btn btn-primary">Save</button>
                             </div>
                             <h3 className="name card-title">{result.volumeInfo.title}</h3>
