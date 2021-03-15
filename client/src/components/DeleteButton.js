@@ -1,26 +1,24 @@
 import React from "react";
 import { Button } from "react-bootstrap";
 import API from "../utils/API";
-function DeleteButton() {
 
-    // const handleDelete = event => {
-    //     event.preventDefault();
+function DeleteButton({savedBook, setSavedBook}) {
 
-    //     if (result.id) {
-    //         API.saveBook({
-    //         title: result.volumeInfo.title,
-    //         authors: result.volumeInfo.authors,
-    //         description: result.volumeInfo.description,
-    //         image: result.volumeInfo.imageLinks.thumbnail,
-    //         link: result.volumeInfo.previewLink
-    //         })
-    //         .then(res => console.log(res))
-    //         .catch(err => console.log(err));
-    //     }
-    //     };
+    const deleteBook = (id) => {
+        API.deleteBook(id)
+            .then(res => loadBooks()
+            )};
 
+    const loadBooks = (req,res) => {
+        API.getBooks(res)
+            .then(res => {
+                setSavedBook(res.data);
+                console.log(res.data);      
+            })
+            .catch(err => console.log(err));
+    }
     return (
-        <Button type="button" className="btn btn-primary ml-2">X</Button>
+        <Button type="button" className="btn btn-primary ml-2" onClick={() => deleteBook(savedBook._id)}>X</Button>
     )
 }
 

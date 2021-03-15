@@ -33,7 +33,7 @@ function Saved () {
                     <div className="card-body ml-3 d-flex flex-column justify-content-center">
                         <div className="d-flex flex-row">
                             <a type="button" className="btn btn-primary" target="_blank" href={savedBook.link}>View</a>
-                            <DeleteButton />
+                            <DeleteButton savedBook={savedBook} setSavedBook={setSavedBook} />
                         </div>
                         <h3 className="title card-title mt-2" style={{fontSize: "25px"}}>{savedBook.title}</h3>
                         <h4 className="authors" style={{fontSize: "15px"}}>{savedBook.authors}</h4>
