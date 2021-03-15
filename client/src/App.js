@@ -1,6 +1,11 @@
 import React from "react";
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import "bootstrap/scss/bootstrap.scss";
+// import ReactNotification from 'react-notifications-component';
+// import { store } from 'react-notification-component';
+// import "animate.css-react";
+// import 'react-notifications-component/dist/theme.css'
+
 import GlobalNavbar from "./components/GlobalNavbar";
 import Header from "./components/Jumbotron";
 import Home from "./pages/Home";

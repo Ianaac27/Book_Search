@@ -4,12 +4,14 @@
   "private": true,
   "proxy": "http://localhost:3001/",
   "dependencies": {
+    "animate.css-react": "^1.1.0",
     "axios": "^0.21.1",
     "bootstrap": "^4.6.0",
     "node-sass": "^4.14.1",
     "react": "^16.6.3",
     "react-bootstrap": "^1.5.1",
     "react-dom": "^16.6.3",
+    "react-notification-component": "^1.1.4",
     "react-router-dom": "^5.2.0",
     "react-scripts": "^2.1.1"
   },
