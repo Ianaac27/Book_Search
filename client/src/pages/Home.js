@@ -1,6 +1,4 @@
-import React, {useRef, useState} from "react";
-import axios from "axios";
-import { Card, Form, Button } from "react-bootstrap";
+import React, {useState} from "react";
 // import API from "../utils/API";
 import Search from "../components/Search";
 import BookResults from "../components/BookResults";
