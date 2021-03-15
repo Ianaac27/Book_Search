@@ -9,7 +9,7 @@ function SaveButton({result}) {
         if (result.id) {
             API.saveBook({
             title: result.volumeInfo.title,
-            authors: [result.volumeInfo.authors],
+            authors: result.volumeInfo.authors,
             description: result.volumeInfo.description,
             image: result.volumeInfo.imageLinks.thumbnail,
             link: result.volumeInfo.previewLink
