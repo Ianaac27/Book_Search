@@ -1,5 +1,5 @@
 import React from "react";
-import Saved from "./Saved";
+import Saved from "../components/Saved";
 
 function SavedBooks () {
     return (

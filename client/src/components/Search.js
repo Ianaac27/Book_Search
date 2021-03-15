@@ -3,10 +3,8 @@ import React, {useRef, useState} from "react";
 import { Card, Form, Button } from "react-bootstrap";
 import API from "../utils/API";
 
-function Search () {
+function Search ({setResult}) {
 
-    const [books, setBooks] = useState("");
-    const [result, setResult] = useState([]);
     const [apiKey, setApiKey] = useState("AIzaSyBxQCKW6sj6XpOO98O3jUevXEKeJ5VyDFY");
 
     const bookInput = useRef();

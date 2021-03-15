@@ -1,5 +1,6 @@
 import React from "react";
 import { Navbar, Nav } from "react-bootstrap";
+import {Link} from "react-router-dom";
 
 function GlobalNavbar() {
     return (
@@ -8,7 +9,7 @@ function GlobalNavbar() {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Nav className="mr-auto">
                     <Nav.Link href="/">Search</Nav.Link>
-                    <Nav.Link href="/saved">Saved</Nav.Link>
+                    <Nav.Link href="/savedbooks">Saved</Nav.Link>
                 </Nav>
         </Navbar>
     )

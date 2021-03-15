@@ -1,30 +1,32 @@
 import React from "react";
-// import {Router, Switch, Route} from "react-router-dom";
+import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import "bootstrap/scss/bootstrap.scss";
 import GlobalNavbar from "./components/GlobalNavbar";
 import Header from "./components/Jumbotron";
-import Home from "./components/Home";
-import SavedBooks from "./components/SavedBooks";
+import Home from "./pages/Home";
+import SavedBooks from "./pages/SavedBooks";
+import NotFound from "./pages/NotFound";
+
 
 
 function App() {
 
     return (
-      // <Router>
-        <div>
+      <Router>
+        <div>  
           <div className="row">
             <GlobalNavbar />
           </div>
           <div className="container">
             <Header />
-            <Home />
-            {/* <Switch>
-                <Route path="/home" component={Home} />
+            <Switch>
+                <Route exact path="/" component={Home} />
                 <Route path="/savedbooks" component={SavedBooks} />
-            </Switch> */}
+                <Route component={NotFound}/>
+            </Switch>
           </div>
         </div>
-      // </Router>
+        </Router>
     );
 }
 
