@@ -25,10 +25,11 @@ function SaveButton({result}) {
         event.preventDefault();
 
         //find another way to compare
-        for (var i=0; i < savedBook.length; i++) {
-            console.log(savedBook[i].id);
-            console.log(result.id);
-            if (result.id !== savedBook[i].id) {
+        // for (var i = 0; i < savedBook.length; i++) {
+            // console.log(savedBook[i].id);
+            // console.log(result.id);
+            // (result.id !== savedBook.id)
+            if (result.id) {
                 API.saveBook({
                     id:   result.id,  
                     title: result.volumeInfo.title,
@@ -45,7 +46,7 @@ function SaveButton({result}) {
                 handleErrorNotification()
                 return;
             }
-        }
+        // }
     }
         const handleSavedNotification = () => {
             store.addNotification({
@@ -57,9 +58,9 @@ function SaveButton({result}) {
                 animationIn: ["animate__animated", "animate__fadeIn"],
                 animationOut: ["animate__animated", "animate__fadeOut"],
                 dismiss: {
-                    duration: 6000,
-                    // onScreen: true,
+                    duration: 3000,
                     pauseOnHover: true,
+                    onScreen: true,
                     click: true,
                     touch: true
                 }
