@@ -1,37 +1,75 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { Button } from "react-bootstrap";
-import ReactNotification from 'react-notifications-component';
-import { store } from 'react-notification-component';
-import "animate.css-react";
-import 'react-notifications-component/dist/theme.css'
-import API from "../utils/API";
-import { TRUE } from "node-sass";
+import { store } from 'react-notifications-component';
+import 'animate.css/animate.css'
+import API from "../utils/API"
+;
 function SaveButton({result}) {
+
+    const [savedBook, setSavedBook] = useState([]);
+
+    useEffect(() => {
+        loadBooks()
+      }, [])
+
+    const loadBooks = (req,res) => {
+        API.getBooks(res)
+            .then(res => {
+                setSavedBook(res.data);
+                console.log(res.data);      
+            })
+            .catch(err => console.log(err));
+    }
 
     const handleSave = event => {
         event.preventDefault();
-
-        if (result.id) {
-            API.saveBook({
-            title: result.volumeInfo.title,
-            authors: result.volumeInfo.authors,
-            description: result.volumeInfo.description,
-            image: result.volumeInfo.imageLinks.thumbnail,
-            link: result.volumeInfo.previewLink
-            })
-            .then(res => 
-                handleNotification()
-                ).catch(err => console.log(err));
-        }
+        
+        for (var i=0; i <savedBook.length; i++) {
+            if (result.id) {
+                API.saveBook({
+                    id:   result.id,  
+                    title: result.volumeInfo.title,
+                    authors: result.volumeInfo.authors,
+                    description: result.volumeInfo.description,
+                    image: result.volumeInfo.imageLinks.thumbnail,
+                    link: result.volumeInfo.previewLink
+                })
+                .then(res => 
+                handleSavedNotification() 
+                //    console.log(res)
+                ).catch(err => console.log(err))
+            } else {
+                handleErrorNotification()
+                return;
+            }
         };
-
-        const handleNotification = () => {
+    }
+        const handleSavedNotification = () => {
             store.addNotification({
                 title: "New Book Added",
-                message: result.volumeInfo.title + "has been saved to your library",
+                message: result.volumeInfo.title + " has been saved to your library",
                 type: "success",
                 insert: "top",
-                container: "top-right",
+                container: "top-full",
+                animationIn: ["animate__animated", "animate__fadeIn"],
+                animationOut: ["animate__animated", "animate__fadeOut"],
+                dismiss: {
+                    duration: 6000,
+                    // onScreen: true,
+                    pauseOnHover: true,
+                    click: true,
+                    touch: true
+                }
+            });
+        }
+
+        const handleErrorNotification = () => {
+            store.addNotification({
+                title: "ERROR",
+                message: result.volumeInfo.title + " has already been saved",
+                type: "danger",
+                insert: "top",
+                container: "top-full",
                 animationIn: ["animate__animated", "animate__fadeIn"],
                 animationOut: ["animate__animated", "animate__fadeOut"],
                 dismiss: {
@@ -46,7 +84,6 @@ function SaveButton({result}) {
 
     return (
         <>
-            <ReactNotification isMobile={TRUE} breakpoint={768} />
             <Button type="button" className="btn btn-primary ml-2" onClick={handleSave}>Save</Button>
         </>
     )
