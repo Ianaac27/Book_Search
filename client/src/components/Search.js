@@ -1,7 +1,6 @@
 import axios from "axios";
 import React, {useRef, useState} from "react";
 import { Card, Form, Button } from "react-bootstrap";
-import API from "../utils/API";
 
 function Search ({setResult}) {
 
