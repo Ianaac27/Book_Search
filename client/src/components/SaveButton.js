@@ -23,9 +23,12 @@ function SaveButton({result}) {
 
     const handleSave = event => {
         event.preventDefault();
-        
-        for (var i=0; i <savedBook.length; i++) {
-            if (result.id) {
+
+        //find another way to compare
+        for (var i=0; i < savedBook.length; i++) {
+            console.log(savedBook[i].id);
+            console.log(result.id);
+            if (result.id !== savedBook[i].id) {
                 API.saveBook({
                     id:   result.id,  
                     title: result.volumeInfo.title,
@@ -42,7 +45,7 @@ function SaveButton({result}) {
                 handleErrorNotification()
                 return;
             }
-        };
+        }
     }
         const handleSavedNotification = () => {
             store.addNotification({
