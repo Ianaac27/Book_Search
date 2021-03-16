@@ -2,7 +2,7 @@ const express = require("express");
 const path = require("path");
 const PORT = process.env.PORT || 3001;
 const app = express();
-const routes = require("./routes");
+// const routes = require("./routes");
 
 require("./config/connect");
 
@@ -16,7 +16,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Add routes, both API and view
-app.use(routes);
+app.use("/api", require('./routes/api'));
 
 // Send every request to the React app
 app.get("*", function(req, res) {

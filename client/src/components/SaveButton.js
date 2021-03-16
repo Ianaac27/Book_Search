@@ -6,7 +6,7 @@ import API from "../utils/api"
 ;
 function SaveButton({result}) {
     //Code for potential duplicating, currently unable to get it to work.
-    
+
     // const [savedBook, setSavedBook] = useState([]);
     // const idArray = [];
     // const emptyArray = [];
@@ -37,6 +37,8 @@ function SaveButton({result}) {
     //         })
     //         .catch(err => console.log(err));
     // }
+
+    //create a find one api? to compare 1 id
 
     const handleSave = event => {
         event.preventDefault();
