@@ -26,11 +26,11 @@ function DeleteButton({savedBook, setSavedBook}) {
             message: savedBook.title + " has been deleted from your library",
             type: "warning",
             insert: "top",
-            container: "top-full",
+            container: "top-right",
             animationIn: ["animate__animated", "animate__fadeIn"],
             animationOut: ["animate__animated", "animate__fadeOut"],
             dismiss: {
-                duration: 3000,
+                duration: 2000,
                 onScreen: true,
                 pauseOnHover: true,
                 click: true,
