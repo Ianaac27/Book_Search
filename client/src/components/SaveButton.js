@@ -88,7 +88,7 @@ function SaveButton({result}) {
 
     return (
         <>
-            <Button type="button" className="btn btn-primary ml-2" onClick={handleSave}>Save</Button>
+            <Button type="button" className="btn btn-primary ml-2" style={{height: "40px"}} onClick={handleSave}>Save</Button>
         </>
     )
 }
