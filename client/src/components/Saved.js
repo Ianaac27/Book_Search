@@ -32,7 +32,7 @@ function Saved () {
                     <div className="card-body ml-3 d-flex flex-column justify-content-center">
                         <div className="d-flex flex-wrap-reverse justify-content-between">
                             <div className="d-flex flex-column">
-                                <h3 className="title card-title" style={{fontSize: "25px"}}>{savedBook.title}</h3>
+                                <h3 className="title card-title" style={{fontSize: "20px"}}>{savedBook.title}</h3>
                                 <h4 className="authors" style={{fontSize: "15px"}}>{savedBook.authors}</h4>
                             </div>
                             <div className="d-flex flex-row">

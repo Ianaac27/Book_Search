@@ -13,7 +13,7 @@ function BookResults ({result}) {
                         <div className="card-body ml-3 d-flex flex-column justify-content-center">
                             <div className="d-flex flex-wrap-reverse justify-content-between">
                                 <div className="d-flex flex-column">
-                                    <h3 className="title card-title" style={{fontSize: "25px"}}>{result.volumeInfo.title}</h3>
+                                    <h3 className="title card-title" style={{fontSize: "20px"}}>{result.volumeInfo.title}</h3>
                                     <h4 className="authors" style={{fontSize: "15px"}}>{result.volumeInfo.authors}</h4>
                                 </div>
                                 <div className="d-flex flex-row">
