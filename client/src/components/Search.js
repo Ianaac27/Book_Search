@@ -24,14 +24,16 @@ function Search ({setResult}) {
         <Card>
             <Card.Body>
                 <h2 className="fs-2" >Book Search</h2>
-                <Form onSubmit={handleSubmit}> 
-                    <Form.Group>
+                <Form onSubmit={handleSubmit} >
+                    <Form.Group >
                         <Form.Label>Book Name</Form.Label>
                             <Form.Control ref={bookInput} type="text" placeholder="Search Book" />
                     </Form.Group>
-                    <Button variant="primary" type="submit">
-                        Search
-                    </Button>
+                    <div className="d-flex flex-row justify-content-end">
+                        <Button variant="primary" size="md" type="submit">
+                            Search
+                        </Button>
+                    </div> 
                 </Form>
             </Card.Body>
         </Card>
