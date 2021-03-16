@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import { Card } from "react-bootstrap";
 import DeleteButton from "./DeleteButton";
-import API from "../utils/API";
+import API from "../utils/api";
 
 function Saved () {
 

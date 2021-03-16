@@ -2,7 +2,7 @@ import React from "react";
 import { Button } from "react-bootstrap";
 import { store } from 'react-notifications-component';
 import 'animate.css/animate.css'
-import API from "../utils/API";
+import API from "../utils/api";
 
 function DeleteButton({savedBook, setSavedBook}) {
 
