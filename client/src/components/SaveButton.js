@@ -5,16 +5,17 @@ import 'animate.css/animate.css'
 import API from "../utils/api"
 ;
 function SaveButton({result}) {
-
-    const [savedBook, setSavedBook] = useState([]);
-    const idArray = [];
+    //Code for potential duplicating, currently unable to get it to work.
+    
+    // const [savedBook, setSavedBook] = useState([]);
+    // const idArray = [];
     // const emptyArray = [];
 
     // useEffect(() => {
     //     loadBooks()
     //   }, [])
 
-      //Code for potential duplicating, currently unable to get it to work.
+    
     // const handleIdArray = () => {
     //     for (var i = 0; i < savedBook.length; i++) {  
     //         idArray.push(savedBook[i].id)
