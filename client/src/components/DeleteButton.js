@@ -39,7 +39,7 @@ function DeleteButton({savedBook, setSavedBook}) {
         });
     }
     return (
-        <Button type="button" className="btn btn-primary ml-2" onClick={() => deleteBook(savedBook._id)}>X</Button>
+        <Button type="button" className="btn btn-primary ml-2" style={{height: "40px"}} onClick={() => deleteBook(savedBook._id)}>Delete</Button>
     )
 }
 
