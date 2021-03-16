@@ -10,9 +10,9 @@ function SaveButton({result}) {
     const idArray = [];
     // const emptyArray = [];
 
-    useEffect(() => {
-        loadBooks()
-      }, [])
+    // useEffect(() => {
+    //     loadBooks()
+    //   }, [])
 
       //Code for potential duplicating, currently unable to get it to work.
     // const handleIdArray = () => {
@@ -28,14 +28,14 @@ function SaveButton({result}) {
     //     console.log(idArray);
     // }
 
-    const loadBooks = (req,res) => {
-        API.getBooks(res)
-            .then(res => {
-                setSavedBook(res.data);
-                console.log(res.data);      
-            })
-            .catch(err => console.log(err));
-    }
+    // const loadBooks = (req,res) => {
+    //     API.getBooks(res)
+    //         .then(res => {
+    //             setSavedBook(res.data);
+    //             console.log(res.data);      
+    //         })
+    //         .catch(err => console.log(err));
+    // }
 
     const handleSave = event => {
         event.preventDefault();
