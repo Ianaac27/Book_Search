@@ -3,9 +3,8 @@ import { Navbar, Nav } from "react-bootstrap";
 
 function GlobalNavbar() {
     return (
-        <Navbar bg="light" expand="lg">
+        <Navbar bg="light" className="ml-3">
             <Navbar.Brand href="#home">Google Books</Navbar.Brand>
-            <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Nav className="mr-auto">
                     <Nav.Link href="/">Search</Nav.Link>
                     <Nav.Link href="/savedbooks">Saved</Nav.Link>
