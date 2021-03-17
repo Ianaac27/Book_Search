@@ -27,7 +27,7 @@ Ianaac27
 
 Here is a mock of the Google Book Search.
 
-![Book_Search](src/screenshot.jpg)
+![Book_Search](client/screenshot.jpg)
 
 # Link
 
