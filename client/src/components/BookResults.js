@@ -1,5 +1,6 @@
 import React from "react";
 import { Card } from "react-bootstrap";
+import "../styles/card.css";
 import SaveButton from "./SaveButton";
 
 function BookResults ({result}) {
@@ -8,8 +9,8 @@ function BookResults ({result}) {
             <h2 className="fs-2 text-white">Results</h2>
             <div >
             {result.length > 0 ? result.map(result => (
-                <Card className="my-4 py-4" style={{ height: "260px"}} >
-                    <Card.Body className="d-flex justify-content-center align-item-center">
+                <Card className="book-card my-4 py-4" style={{ height: "260px"}} >
+                    <Card.Body className="book-info d-flex justify-content-center align-item-center">
                         <div className="card-body ml-3 d-flex flex-column justify-content-center">
                             <div className="d-flex flex-wrap-reverse justify-content-between">
                                 <div className="d-flex flex-column">

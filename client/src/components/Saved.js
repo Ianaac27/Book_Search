@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
 import { Card } from "react-bootstrap";
+import "../styles/card.css";
 import DeleteButton from "./DeleteButton";
 import API from "../utils/api";
 
@@ -27,8 +28,8 @@ function Saved () {
         <h2 className="fs-2 text-white">Saved Books</h2>
         <div >
         {savedBook.length > 0 ? savedBook.map(savedBook => (
-            <Card className="my-4 py-4" style={{ height: "260px"}} >
-                <Card.Body className="d-flex justify-content-center align-item-center">
+            <Card className="book-card my-4 py-4" style={{ height: "260px"}} >
+                <Card.Body className="book-info d-flex justify-content-center align-item-center">
                     <div className="card-body ml-3 d-flex flex-column justify-content-center">
                         <div className="d-flex flex-wrap-reverse justify-content-between">
                             <div className="d-flex flex-column">
